@@ -76,6 +76,8 @@
         </div>
     </div>
 
+    @include('components.social-links')
+
     <!-- Google Reviews Section -->
     <div class="py-16 bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -143,7 +145,7 @@
 
             <!-- Button to real Google Reviews -->
             <div class="mt-12 text-center">
-                <a href="https://www.google.com/search?client=firefox-b-d&hs=xqWp&sca_esv=8a3921a260e4e119&sxsrf=ANbL-n7tIXgIwmydb8DKoKPHZAR7i5xbNw:1773626298230&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOfYu9dGB7sxd7S_8wKcaE-jfWraxWHKRwHmFPa96a1IsgEW8SThflrCuG2R0RzmPo1wpFC2gTromdG0HHQ21DYCEBWrrxG48VfefyCczdkUbQXz-Dw%3D%3D&q=aXiYZ+3D+Studios+Reviews&sa=X&ved=2ahUKEwicm-HrqKOTAxXgR2wGHUM7NikQ0bkNegQIOBAF&biw=1869&bih=964&dpr=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-brand-darkblue font-semibold hover:text-brand-red transition border border-gray-300 rounded-full px-6 py-2 bg-white hover:border-brand-red hover:shadow-sm">
+                <a href="https://maps.app.goo.gl/PhfnQpA9QRQHu6Q49?g_st=aw" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-brand-darkblue font-semibold hover:text-brand-red transition border border-gray-300 rounded-full px-6 py-2 bg-white hover:border-brand-red hover:shadow-sm">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5">
                     <span>Read all our reviews on Google</span>
                     <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
