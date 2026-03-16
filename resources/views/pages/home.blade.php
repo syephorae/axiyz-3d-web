@@ -76,6 +76,82 @@
         </div>
     </div>
 
+    <!-- Google Reviews Section -->
+    <div class="py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-brand-red font-semibold tracking-wide uppercase">Testimonials</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-brand-darkblue sm:text-4xl">
+                    What Our Clients Say
+                </p>
+                <div class="mt-4 flex justify-center items-center gap-2">
+                    <span class="text-xl font-bold text-gray-900">5.0</span>
+                    <div class="flex text-yellow-400">
+                        @for($i = 0; $i < 5; $i++)
+                        <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        @endfor
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 space-y-8 md:space-y-0 md:grid md:grid-cols-3 md:gap-x-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 relative hover:shadow-md transition">
+                    <div class="flex text-yellow-400 mb-4">
+                        @for($i = 0; $i < 5; $i++)
+                        <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        @endfor
+                    </div>
+                    <p class="text-gray-600 mb-6 italic relative z-10">"I printed my final year project parts here using PLA and PETG, and the results were awesome! The print quality was clean and accurate, and the staff were super friendly and helpful. They gave me great tips on which material to use for different parts. The price was fair, and everything was ready on time. Definitely recommend this shop for any 3D printing or student projects!"</p>
+                    <div class="flex items-center">
+                        <div class="h-10 w-10 rounded-full bg-brand-darkblue flex items-center justify-center text-white font-bold uppercase">JD</div>
+                        <div class="ml-3 text-sm font-medium text-gray-900">Thurgesswaran</div>
+                    </div>
+                    <svg class="absolute top-6 right-6 h-8 w-8 text-gray-100" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"></path></svg>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 relative mt-8 md:mt-0 hover:shadow-md transition">
+                    <div class="flex text-yellow-400 mb-4">
+                         @for($i = 0; $i < 5; $i++)
+                        <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        @endfor
+                    </div>
+                    <p class="text-gray-600 mb-6 italic relative z-10">"I had a great experience with this 3D printing shop! The print quality was excellent — smooth surface, accurate dimensions, and very durable. The staff were friendly and helpful, giving good advice on materials and print settings. The turnaround time was fast, and the price was reasonable for the quality I received. Highly recommended for anyone who needs professional and reliable 3D printing services!"</p>
+                    <div class="flex items-center">
+                        <div class="h-10 w-10 rounded-full bg-brand-red flex items-center justify-center text-white font-bold uppercase">SM</div>
+                        <div class="ml-3 text-sm font-medium text-gray-900">Arvindan Shunmugam</div>
+                    </div>
+                    <svg class="absolute top-6 right-6 h-8 w-8 text-gray-100" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"></path></svg>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-200 relative mt-8 md:mt-0 hover:shadow-md transition">
+                    <div class="flex text-yellow-400 mb-4">
+                         @for($i = 0; $i < 5; $i++)
+                        <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                        @endfor
+                    </div>
+                    <p class="text-gray-600 mb-6 italic relative z-10">"I recently purchased a Coolie Arm Tag from Axiyz 3D Studios, and I must say the 3D print quality is excellent. The detailing is sharp, the finishing feels smooth, and the overall durability is impressive. It looks and feels premium compared to many other 3D-printed items I’ve seen. Delivery was also fast and well-packed. Definitely a reliable studio for custom 3D prints, and I’m very satisfied with this purchase."</p>
+                    <div class="flex items-center">
+                        <div class="h-10 w-10 rounded-full bg-brand-yellow flex items-center justify-center text-brand-darkblue font-bold uppercase">MP</div>
+                        <div class="ml-3 text-sm font-medium text-gray-900">MR XL STUDIO</div>
+                    </div>
+                    <svg class="absolute top-6 right-6 h-8 w-8 text-gray-100" fill="currentColor" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"></path></svg>
+                </div>
+            </div>
+
+            <!-- Button to real Google Reviews -->
+            <div class="mt-12 text-center">
+                <a href="https://www.google.com/search?client=firefox-b-d&hs=xqWp&sca_esv=8a3921a260e4e119&sxsrf=ANbL-n7tIXgIwmydb8DKoKPHZAR7i5xbNw:1773626298230&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOfYu9dGB7sxd7S_8wKcaE-jfWraxWHKRwHmFPa96a1IsgEW8SThflrCuG2R0RzmPo1wpFC2gTromdG0HHQ21DYCEBWrrxG48VfefyCczdkUbQXz-Dw%3D%3D&q=aXiYZ+3D+Studios+Reviews&sa=X&ved=2ahUKEwicm-HrqKOTAxXgR2wGHUM7NikQ0bkNegQIOBAF&biw=1869&bih=964&dpr=1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-brand-darkblue font-semibold hover:text-brand-red transition border border-gray-300 rounded-full px-6 py-2 bg-white hover:border-brand-red hover:shadow-sm">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5">
+                    <span>Read all our reviews on Google</span>
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- Call to action -->
     <div class="bg-brand-red">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
