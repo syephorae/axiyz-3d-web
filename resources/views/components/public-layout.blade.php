@@ -10,6 +10,9 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700,800&display=swap" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
         <!-- 3D Model Viewer -->
         <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
@@ -30,8 +33,8 @@
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center mr-8">
-                                <a href="{{ route('home') }}" class="text-2xl font-extrabold text-brand-darkblue tracking-tight hover:text-brand-red transition-colors duration-300">
-                                    aXiYZ 3D <span class="text-brand-red">Studios</span>
+                                <a href="{{ route('home') }}" class="flex items-center hover:opacity-80 transition-opacity duration-300">
+                                    <img src="/logo.jpg" alt="aXiYZ 3D Studios" class="h-12 w-auto object-contain">
                                 </a>
                             </div>
 
@@ -75,7 +78,7 @@
                 <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
                     <!-- Brand -->
                     <div>
-                        <h3 class="text-2xl font-bold mb-4">aXiYZ 3D <span class="text-brand-red">Studios</span></h3>
+                        <img src="/logo.jpg" alt="aXiYZ 3D Studios" class="h-16 w-auto object-contain mb-4">
                         <p class="text-gray-300 mb-4">Bringing your ideas to life with precision 3D printing and modeling.</p>
                         <!-- Social Media Links -->
                         <div class="flex justify-center md:justify-start gap-4 mt-4">
