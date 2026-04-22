@@ -35,4 +35,21 @@ return [
         ],
     ],
 
+    'google_places' => [
+        'key' => env('GOOGLE_PLACES_API_KEY'),
+    ],
+
+    'google_oauth' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI'),
+        'location_id' => env('GOOGLE_BUSINESS_LOCATION_ID'),
+    ],
+
+    'emailjs' => [
+        'service_id' => env('VITE_EMAILJS_SERVICE_ID'),
+        'template_id' => env('VITE_EMAILJS_TEMPLATE_ID'),
+        'public_key' => env('VITE_EMAILJS_PUBLIC_KEY'),
+    ],
+
 ];

@@ -1,5 +1,5 @@
 <x-public-layout>
-    <div class="relative bg-brand-darkblue overflow-hidden">
+    <div class="relative z-10 bg-brand-darkblue shadow-2xl shadow-black/50">
         <div class="max-w-7xl mx-auto">
             <div class="relative z-10 pb-8 bg-brand-darkblue sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 pt-20">
                 <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
@@ -28,14 +28,22 @@
             </div>
         </div>
         <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-gray-900 border-l-4 border-brand-red flex items-center justify-center p-8">
-            <model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb" auto-rotate camera-controls shadow-intensity="1" ar class="w-full h-[300px] lg:h-full bg-transparent"></model-viewer>
+            <model-viewer src="/models/jeep.glb" auto-rotate camera-controls shadow-intensity="1" ar class="w-full h-[300px] lg:h-full bg-transparent"></model-viewer>
         </div>
     </div>
     
-    <!-- Services Overview -->
-    <div class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
+    
+    <div class="py-16 bg-white relative z-0 overflow-hidden dot-grid interactive-grid">
+        <!-- Background 3D Model (Classic Sonic Peeking) -->
+        <div class="absolute -left-20 inset-y-0 w-80 pointer-events-none z-0 hidden lg:block opacity-100">
+            <model-viewer src="/models/classic_sonic.glb" auto-rotate rotation-per-second="30deg" class="w-full h-full bg-transparent border-none" camera-orbit="0deg 75deg 150%" loading="lazy" reveal="auto" shadow-intensity="1"></model-viewer>
+        </div>
+
+        <!-- Spotlight Layer (follows mouse) -->
+        <div class="spotlight-bg"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center reveal-hidden">
                 <h2 class="text-base text-brand-red font-semibold tracking-wide uppercase">Services</h2>
                 <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-brand-darkblue sm:text-4xl">
                     Everything you need to build it
@@ -47,7 +55,7 @@
             
             <div class="mt-10">
                 <div class="space-y-10 md:space-y-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 md:gap-y-10">
-                    <div class="text-center p-6 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-lg hover:border-brand-yellow transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-center p-6 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-lg hover:border-brand-yellow transition duration-300 transform hover:-translate-y-1 reveal-hidden" style="transition-delay: 0.1s;">
                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-darkblue text-white mx-auto mb-4 shadow-md">
                             <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 00-1-1H4a1 1 0 01-1-1V4a1 1 0 011-1h3a1 1 0 001-1v-1z"></path></svg>
                         </div>
@@ -55,7 +63,7 @@
                         <p class="mt-2 text-base text-gray-500">Custom 3D design for printing, prototyping & product development. Engineering & mechanical design with print-ready files.</p>
                     </div>
                     
-                    <div class="text-center p-6 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-lg hover:border-brand-red transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-center p-6 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-lg hover:border-brand-red transition duration-300 transform hover:-translate-y-1 reveal-hidden" style="transition-delay: 0.2s;">
                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-red text-white mx-auto mb-4 shadow-md">
                             <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
                         </div>
@@ -63,7 +71,7 @@
                         <p class="mt-2 text-base text-gray-500">Recreate broken or unavailable parts into printable 3D models. Accurate measurement, modeling and functional replacements.</p>
                     </div>
                     
-                    <div class="text-center p-6 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-lg hover:border-brand-darkblue transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-center p-6 bg-gray-50 rounded-lg shadow-sm border border-gray-100 hover:shadow-lg hover:border-brand-darkblue transition duration-300 transform hover:-translate-y-1 reveal-hidden" style="transition-delay: 0.3s;">
                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-brand-yellow text-brand-darkblue mx-auto mb-4 shadow-md">
                             <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                         </div>
@@ -76,7 +84,14 @@
     </div>
 
     <!-- Google Reviews Section -->
-    <div class="py-16 bg-gray-50 border-t border-gray-200">
+    <div class="py-16 bg-white relative z-0 overflow-hidden dot-grid interactive-grid border-t border-gray-200">
+        <!-- Background 3D Model (Sneasler Peeking) -->
+        <div class="absolute -right-20 inset-y-0 w-80 pointer-events-none z-0 hidden lg:block opacity-100">
+            <model-viewer src="/models/mobile_-_pokemon_home_-_903_sneasler.glb" auto-rotate rotation-per-second="-30deg" class="w-full h-full bg-transparent border-none" camera-orbit="0deg 75deg 150%" loading="lazy" reveal="auto" shadow-intensity="1"></model-viewer>
+        </div>
+
+        <!-- Spotlight Layer (follows mouse) -->
+        <div class="spotlight-bg"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <h2 class="text-base text-brand-red font-semibold tracking-wide uppercase">Testimonials</h2>
@@ -142,17 +157,21 @@
 
             <!-- Button to real Google Reviews -->
             <div class="mt-12 text-center">
-                <a href="https://maps.app.goo.gl/PhfnQpA9QRQHu6Q49" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-brand-darkblue font-semibold hover:text-brand-red transition border border-gray-300 rounded-full px-6 py-2 bg-white hover:border-brand-red hover:shadow-sm">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google" class="w-5 h-5">
-                    <span>Read all our reviews on Google</span>
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                <a href="{{ route('testimonials') }}" class="inline-flex items-center space-x-2 text-brand-darkblue font-semibold hover:text-brand-red transition border border-gray-300 rounded-full px-8 py-3 bg-white hover:border-brand-red hover:shadow-md shadow-sm group">
+                    <svg class="w-5 h-5 text-brand-yellow group-hover:text-brand-red transition" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                    </svg>
+                    <span>View All Testimonials</span>
+                    <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Call to action -->
-    <div class="bg-brand-red">
+    <!-- Call to action with depth -->
+    <div class="bg-brand-red relative shadow-[inset_0_15px_15px_-15px_rgba(0,0,0,0.4),inset_0_-15px_15px_-15px_rgba(0,0,0,0.4)]">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
             <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
                 <span class="block">Ready for a custom part?</span>

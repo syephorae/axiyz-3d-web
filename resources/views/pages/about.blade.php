@@ -1,5 +1,7 @@
 <x-public-layout>
-    <div class="bg-white py-16 sm:py-24">
+    <div class="bg-white dot-grid interactive-grid relative overflow-hidden py-16 sm:py-24">
+        <!-- Spotlight Layer (follows mouse) -->
+        <div class="spotlight-bg"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
                 <div>
@@ -41,15 +43,43 @@
                     </div>
                 </div>
                 
-                <div class="mt-12 lg:mt-0 relative">
-                    <div class="relative rounded-lg shadow-xl overflow-hidden bg-gray-100 p-2">
-                        <!-- Placeholder for an image of the studio or models -->
-                        <img class="w-full rounded-md object-cover h-96" src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="3D Printing in action">
+                <div class="mt-12 lg:mt-0 relative h-[600px] overflow-visible">
+                    <!-- Background Peeking Model (Consistency) -->
+                    <div class="absolute -right-20 top-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none z-0 hidden lg:block opacity-30">
+                        <model-viewer src="/models/car.glb" auto-rotate rotation-per-second="-30deg" class="w-full h-full bg-transparent border-none" loading="lazy" reveal="auto" shadow-intensity="1" camera-orbit="0deg 75deg 150%"></model-viewer>
+                    </div>
+
+                    <!-- THE BENTO COLLAGE -->
+                    <div class="grid grid-cols-6 grid-rows-6 gap-3 h-full relative z-10 p-2">
+                        <!-- Large Feature Tiles -->
+                        <div class="col-span-4 row-span-3 rounded-2xl overflow-hidden shadow-lg reveal-hidden border-2 border-brand-red/10" style="transition-delay: 0.1s;">
+                            <img src="/images/gundam.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Gundam">
+                        </div>
+                        <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-md reveal-hidden border-2 border-brand-yellow/10" style="transition-delay: 0.2s;">
+                            <img src="/images/helmet.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Helmet">
+                        </div>
                         
-                        <!-- Overlay accent -->
-                        <div class="absolute inset-0 border-4 border-brand-red opacity-20 pointer-events-none rounded-lg"></div>
+                        <!-- Medium Tiles -->
+                        <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-md reveal-hidden" style="transition-delay: 0.4s;">
+                            <img src="/images/car.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Car">
+                        </div>
+                        <div class="col-span-2 row-span-2 rounded-2xl overflow-hidden shadow-sm reveal-hidden" style="transition-delay: 0.5s;">
+                            <img src="/images/gear.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Gear">
+                        </div>
+
+                        <!-- Small "Accent" Tiles -->
+                        <div class="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-sm reveal-hidden" style="transition-delay: 0.6s;">
+                            <img src="/images/eevee.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Eevee">
+                        </div>
+                        <div class="col-span-1 row-span-1 rounded-xl overflow-hidden shadow-sm reveal-hidden" style="transition-delay: 0.7s;">
+                            <img src="/images/goku.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Goku">
+                        </div>
+                        <div class="col-span-2 row-span-1 rounded-xl overflow-hidden shadow-sm reveal-hidden" style="transition-delay: 0.8s;">
+                            <img src="/images/mech.jpg" class="w-full h-full object-cover hover:scale-110 transition duration-500" alt="Mech">
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

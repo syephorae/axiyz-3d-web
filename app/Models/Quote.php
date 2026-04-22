@@ -7,7 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class Quote extends Model
 {
     protected $fillable = [
-        'user_id', 'service_id', 'details', 'model_file', 'status', 'quoted_price'
+        'user_id', 
+        'service_id', 
+        'customer_name', 
+        'customer_email', 
+        'customer_phone',
+        'details', 
+        'model_file', 
+        'status', 
+        'quoted_price'
     ];
 
     public function user()

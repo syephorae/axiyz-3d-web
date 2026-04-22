@@ -1,12 +1,28 @@
 <x-public-layout>
-    <div class="bg-white">
+    <div class="bg-white dot-grid interactive-grid relative overflow-hidden">
+        <!-- Spotlight Layer (follows mouse) -->
+        <div class="spotlight-bg"></div>
+
         <!-- Header -->
-        <div class="bg-brand-darkblue py-16">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl font-extrabold text-white tracking-tight">Our <span class="text-brand-red">Products</span></h1>
-                <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-300">
-                    Browse our full range of 3D printing, engineering, and finishing services.
-                </p>
+        <div class="bg-[#e31e24] py-16 relative z-10 shadow-2xl">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 items-center">
+                <!-- 3D Model on the Left -->
+                <model-viewer 
+                    class="w-full h-64 bg-transparent" 
+                    src="/models/parrot.glb" 
+                    auto-rotate 
+                    camera-controls 
+                    shadow-intensity="1"
+                    camera-orbit="0deg 75deg 80%">
+                </model-viewer>
+
+                <!-- Text on the Right -->
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl font-extrabold text-white tracking-tight">Our <span class="text-brand-yellow">Products</span></h1>
+                    <p class="mt-4 max-w-2xl text-xl text-white opacity-90">
+                        Browse our full range of 3D printing, engineering, and finishing services.
+                    </p>
+                </div>
             </div>
         </div>
 
@@ -65,7 +81,7 @@
                 position: absolute;
                 inset: 0;
                 padding: 1.2rem;
-                background: #231e6f;
+                background: #211d71; /* Premium Dark Blue */
                 color: white;
                 transform: translateX(100%);
                 transition: transform 0.4s ease;
@@ -81,33 +97,24 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
 
             {{-- ▸ CATEGORY 1: FDM Filament Printing --}}
-            <x-service-category title="FDM Filament Printing" description="Standard FDM extrusion printing using engineering-grade filaments, priced per gram.">
+            <x-service-category title="FDM Filament Printing" description="Standard FDM extrusion printing using engineering-grade filaments, priced per gram. Filament rolls also available for individual purchase.">
 
-                {{-- PLA --}}
+                {{-- PLA+ --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="3">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1581093458791-9d15482442f6?w=400&q=80" alt="PLA 1">
-                                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&q=80" alt="PLA 2">
-                                <img src="https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=80" alt="PLA 3">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/pla3d.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
-                        <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">PLA 3D Printing</h3>
-                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Suitable for prototypes & display models.</p>
+                        <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">PLA+ 3D Printing</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Enhanced strength & durability over standard PLA. Suitable for functional prototypes.</p>
                         <div class="mt-2 flex items-center gap-2">
                             <span class="text-brand-red font-bold text-sm">RM 0.50/g</span>
                             <span class="text-gray-400 line-through text-xs">RM 0.65</span>
                         </div>
                     </div>
                     <div class="card-details">
-                        <h3 class="font-bold text-brand-yellow text-base">PLA 3D Printing</h3>
-                        <p class="text-sm text-gray-200 leading-relaxed">FDM PLA 3D Printing Service. Rate: RM0.65/g. Ideal for prototypes, display models & creative projects where heat resistance is not critical.</p>
+                        <h3 class="font-bold text-brand-yellow text-base">PLA+ 3D Printing</h3>
+                        <p class="text-sm text-gray-200 leading-relaxed">FDM PLA+ 3D Printing Service. Enhanced strength and toughness. Ideal for prototypes & creative projects. <span class="text-brand-yellow font-bold">Filament rolls available for separate purchase.</span></p>
                         <div class="flex items-center gap-2">
                             <span class="text-white font-bold text-sm">RM 0.50/g</span>
                             <span class="text-gray-400 line-through text-xs">RM 0.65</span>
@@ -116,49 +123,36 @@
                     </div>
                 </div>
 
-                {{-- PLA+ --}}
+
+                {{-- PETG --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&q=80" alt="PLA+ 1">
-                                <img src="https://images.unsplash.com/photo-1581093458791-9d15482442f6?w=400&q=80" alt="PLA+ 2" style="filter:hue-rotate(120deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/petg.jpg" alt="PETG Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
-                        <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">PLA+ / Tough PLA</h3>
-                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Enhanced strength and durability over standard PLA.</p>
+                        <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">FDM PETG Printing Service</h3>
+                        <p class="text-xs text-gray-500 mt-1 line-clamp-2">Enhanced strength and durability. Impact resistant & dimensionally stable.</p>
                         <div class="mt-2 flex items-center gap-2">
                             <span class="text-brand-red font-bold text-sm">RM 0.65/g</span>
                             <span class="text-gray-400 line-through text-xs">RM 0.75</span>
                         </div>
                     </div>
                     <div class="card-details">
-                        <h3 class="font-bold text-brand-yellow text-base">PLA+ / Tough PLA</h3>
-                        <p class="text-sm text-gray-200 leading-relaxed">FDM PLA+ Printing Service. Enhanced strength and durability. Great for end-use components and stronger prototypes.</p>
+                        <h3 class="font-bold text-brand-yellow text-base">PETG Printing</h3>
+                        <p class="text-sm text-gray-200 leading-relaxed">Enhanced strength/durability vs PLA. Ideal for mechanical housings & fixtures. <span class="text-xs italic">(Min charge RM30)</span></p>
                         <div class="flex items-center gap-2">
                             <span class="text-white font-bold text-sm">RM 0.65/g</span>
                             <span class="text-gray-400 line-through text-xs">RM 0.75</span>
                         </div>
-                        <a href="https://wa.me/601165019369?text=axiyz3dstudio-PLA%2B+Tough+PLA" target="_blank" class="mt-1 inline-block text-center bg-[#25D366] text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-[#1DA851] transition">Request Quote</a>
+                        <a href="https://wa.me/601165019369?text=axiyz3dstudio-PETG+3D+Printing" target="_blank" class="mt-1 inline-block text-center bg-[#25D366] text-white text-sm font-semibold px-4 py-2 rounded-md hover:bg-[#1DA851] transition">Request Quote</a>
                     </div>
                 </div>
 
                 {{-- ABS Filament --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=80" alt="ABS 1">
-                                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&q=80" alt="ABS 2" style="filter:hue-rotate(60deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/abs3d.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">ABS 3D Printing</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">Strong, heat-resistant & suitable for functional parts.</p>
@@ -169,7 +163,7 @@
                     </div>
                     <div class="card-details">
                         <h3 class="font-bold text-brand-yellow text-base">ABS 3D Printing</h3>
-                        <p class="text-sm text-gray-200 leading-relaxed">FDM ABS 3D Printing. Strong, heat-resistant & great for mechanical parts, housings, and enclosures needing higher temperature tolerance.</p>
+                        <p class="text-sm text-gray-200 leading-relaxed">FDM ABS 3D Printing. Strong & heat-resistant. Ideal for functional parts. <span class="text-brand-yellow font-bold">Filament rolls available for separate purchase.</span></p>
                         <div class="flex items-center gap-2">
                             <span class="text-white font-bold text-sm">RM 0.75/g</span>
                             <span class="text-gray-400 line-through text-xs">RM 0.85</span>
@@ -181,15 +175,8 @@
                 {{-- TPU --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80" alt="TPU 1">
-                                <img src="https://images.unsplash.com/photo-1581093458791-9d15482442f6?w=400&q=80" alt="TPU 2" style="filter:hue-rotate(300deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/tpuflexible.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">TPU / Flexible Filament</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">Flexible, rubber-like material for gaskets & grips.</p>
@@ -212,15 +199,8 @@
                 {{-- PA / Nylon --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&q=80" alt="Nylon 1" style="filter:hue-rotate(180deg)">
-                                <img src="https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=80" alt="Nylon 2" style="filter:hue-rotate(240deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/panylon.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md" style="filter:hue-rotate(180deg)">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">PA / Nylon 3D Printing</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">High-performance engineering material for demanding applications.</p>
@@ -247,17 +227,8 @@
                 {{-- Standard Resin --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="3">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1581093458791-9d15482442f6?w=400&q=80" alt="Resin 1" style="filter:hue-rotate(30deg)">
-                                <img src="https://images.unsplash.com/photo-1605732562742-3023a888e56e?w=400&q=80" alt="Resin 2">
-                                <img src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&q=80" alt="Resin 3" style="filter:hue-rotate(90deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/standardresin.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md" style="filter:hue-rotate(30deg)">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">Standard Resin Printing</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">High precision resin for engineering & detailed components.</p>
@@ -280,15 +251,8 @@
                 {{-- Flexible Resin --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&q=80" alt="Flex Resin 1" style="filter:hue-rotate(200deg)">
-                                <img src="https://images.unsplash.com/photo-1565967511849-76a60a516170?w=400&q=80" alt="Flex Resin 2" style="filter:hue-rotate(160deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/tpuflexible.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md" style="filter:hue-rotate(200deg)">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">Flexible Resin 3D Printing</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">High-detail resin printing using elastomeric materials.</p>
@@ -311,15 +275,8 @@
                 {{-- ABS Resin --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&q=80" alt="ABS Resin 1" style="filter:hue-rotate(280deg)">
-                                <img src="https://images.unsplash.com/photo-1605732562742-3023a888e56e?w=400&q=80" alt="ABS Resin 2" style="filter:hue-rotate(240deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/absresin.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md" style="filter:hue-rotate(280deg)">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">ABS Resin Printing</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">Engineering-grade high-strength resin for functional use.</p>
@@ -342,15 +299,8 @@
                 {{-- Jewellery Casting Resin --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1586078130702-d208859b6223?w=400&q=80" alt="Jewellery 1">
-                                <img src="https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=400&q=80" alt="Jewellery 2">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/jewellerycastresin.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">Jewellery Casting Resin</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">High-resolution resin for jewellery casting patterns.</p>
@@ -373,15 +323,8 @@
             <x-service-category title="Specialty & Medical Printing" description="Precision printing for dental, medical, and highly specialised industries.">
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=400&q=80" alt="Dental 1">
-                                <img src="https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=400&q=80" alt="Dental 2" style="filter:grayscale(0.5)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/dentalmedical.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">Dental & Medical Model Printing</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">Ultra-detailed resin for dental and medical applications.</p>
@@ -404,15 +347,8 @@
                 {{-- Engineering & Prototype --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400&q=80" alt="Eng 1">
-                                <img src="https://images.unsplash.com/photo-1605732562742-3023a888e56e?w=400&q=80" alt="Eng 2">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/prototypee.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">Engineering & Prototype Development</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">End-to-end support for product development.</p>
@@ -430,15 +366,8 @@
                 {{-- Reverse Engineering --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1565008647105-87a1a60df6c7?w=400&q=80" alt="RE 1">
-                                <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400&q=80" alt="RE 2" style="filter:hue-rotate(180deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/reverseengineering.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">Reverse Engineering</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">Recreate broken or unavailable parts into accurate 3D models.</p>
@@ -461,15 +390,8 @@
                 {{-- Obsolete Parts --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80" alt="Parts 1">
-                                <img src="https://images.unsplash.com/photo-1565008647105-87a1a60df6c7?w=400&q=80" alt="Parts 2" style="filter:hue-rotate(90deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/hardtofindreplicate.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">Obsolete / Hard-to-Find Parts</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">Reproduction of discontinued or unavailable components.</p>
@@ -487,15 +409,8 @@
                 {{-- Industrial --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1605732562742-3023a888e56e?w=400&q=80" alt="Industrial 1">
-                                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&q=80" alt="Industrial 2" style="filter:hue-rotate(200deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/machinecomp.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">Industrial Machine Components</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">Custom manufacturing of mechanical & machine-related components.</p>
@@ -517,15 +432,8 @@
                 {{-- 3D CAD Design --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&q=80" alt="CAD 1">
-                                <img src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400&q=80" alt="CAD 2" style="filter:hue-rotate(270deg)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/3dcad.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">3D CAD Design Service</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">Professional 3D CAD & Modeling. Custom design for printing & development.</p>
@@ -548,15 +456,8 @@
                 {{-- Electroplating --}}
                 <div class="product-card">
                     <div class="card-front">
-                        <div class="img-slider" data-count="2">
-                            <div class="img-slider-track">
-                                <img src="https://images.unsplash.com/photo-1590496793929-36417d3117de?w=400&q=80" alt="Electroplating 1">
-                                <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=400&q=80" alt="Electroplating 2" style="filter:hue-rotate(45deg) brightness(1.1)">
-                            </div>
-                            <div class="slider-dots">
-                                <div class="slider-dot active"></div>
-                                <div class="slider-dot"></div>
-                            </div>
+                        <div class="img-slider">
+                            <img src="/images/electroplating.jpg" alt="Product Image" class="w-full h-full object-cover rounded-md">
                         </div>
                         <h3 class="font-bold text-gray-900 text-sm mt-3 leading-tight">Electroplating</h3>
                         <p class="text-xs text-gray-500 mt-1 line-clamp-2">Premium Chrome Electroplating. High-gloss metallic finishing for 3D printed parts.</p>
@@ -586,21 +487,5 @@
     2. Update data-count="X" to match the total number of images
     3. Add a matching <div class="slider-dot"></div> inside .slider-dots
     --}}
-    <script>
-        // Auto-advance every 3.5 seconds
-        document.querySelectorAll('.img-slider').forEach(function(slider) {
-            var total = parseInt(slider.dataset.count) || 1;
-            if (total < 2) return; // nothing to slide
-
-            slider.dataset.current = 0;
-            setInterval(function() {
-                var current = (parseInt(slider.dataset.current) + 1) % total;
-                slider.dataset.current = current;
-                slider.querySelector('.img-slider-track').style.transform = 'translateX(-' + (current * 100) + '%)';
-                slider.querySelectorAll('.slider-dot').forEach(function(d, i) {
-                    d.classList.toggle('active', i === current);
-                });
-            }, 3500);
-        });
-    </script>
+    <!-- Product Slider logic removed as each card now features a single high-impact image. -->
 </x-public-layout>
