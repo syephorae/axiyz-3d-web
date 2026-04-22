@@ -131,7 +131,7 @@
                                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
                             </a>
                             <!-- Email -->
-                            <a href="mailto:axiyz3d@gmail.com" title="Email" class="p-2 text-brand-yellow hover:bg-white/10 rounded-full transition-all duration-300 transform hover:scale-110">
+                            <a href="mailto:hello@axiyz3d.xyz" title="Email" class="p-2 text-brand-yellow hover:bg-white/10 rounded-full transition-all duration-300 transform hover:scale-110">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                             </a>
                         </div>
@@ -160,7 +160,7 @@
                             </li>
                             <li class="flex items-center justify-center md:justify-start gap-2">
                                 <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                                <a href="mailto:axiyz3d@gmail.com" class="hover:text-white transition">axiyz3d@gmail.com</a>
+                                <a href="mailto:hello@axiyz3d.xyz" class="hover:text-white transition">hello@axiyz3d.xyz</a>
                             </li>
                             <li class="flex items-start justify-center md:justify-start gap-2">
                                 <svg class="w-4 h-4 shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
