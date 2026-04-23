@@ -31,6 +31,26 @@
             <model-viewer src="/models/jeep.glb" auto-rotate camera-controls shadow-intensity="1" ar class="w-full h-[300px] lg:h-full bg-transparent"></model-viewer>
         </div>
     </div>
+
+    {{-- Our Clients Section --}}
+    <div class="bg-gray-50 py-12 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm font-semibold uppercase tracking-wide text-gray-500 mb-8">
+                Trusted by Forward-Thinking Companies
+            </p>
+            <div class="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-3 items-center justify-items-center opacity-60">
+                <div class="flex justify-center transition-all duration-300 hover:opacity-100 hover:scale-105">
+                    <img src="{{ asset('images/clients/nexus.png') }}" alt="Nexus" class="h-10 w-auto filter grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="flex justify-center transition-all duration-300 hover:opacity-100 hover:scale-105">
+                    <img src="{{ asset('images/clients/vertex.png') }}" alt="Vertex 3D" class="h-10 w-auto filter grayscale hover:grayscale-0 transition-all">
+                </div>
+                <div class="flex justify-center transition-all duration-300 hover:opacity-100 hover:scale-105">
+                    <img src="{{ asset('images/clients/aura.png') }}" alt="Aura" class="h-10 w-auto filter grayscale hover:grayscale-0 transition-all">
+                </div>
+            </div>
+        </div>
+    </div>
     
     
     <div class="py-16 bg-white relative z-0 overflow-hidden dot-grid interactive-grid">

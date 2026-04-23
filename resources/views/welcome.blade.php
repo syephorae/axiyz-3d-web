@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+        <title>{{ config('app.name', 'aXiYZ 3D Studios') }}</title>
+        <link rel="icon" type="image/png" href="{{ asset('images/favicon.png') }}?v={{ time() }}">
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -268,6 +269,24 @@
                     <div class="absolute inset-0 rounded-t-lg lg:rounded-t-none lg:rounded-r-lg shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d]"></div>
                 </div>
             </main>
+
+            {{-- Our Clients Section --}}
+            <section class="w-full lg:max-w-4xl max-w-[335px] mt-12 mb-8">
+                <h2 class="text-xs font-semibold tracking-widest uppercase text-[#706f6c] dark:text-[#A1A09A] mb-8 text-center">
+                    Trusted by Industry Leaders
+                </h2>
+                <div class="flex flex-wrap justify-center items-center gap-12 lg:gap-20 opacity-60 dark:opacity-40">
+                    <div class="transition-all duration-300 hover:opacity-100 hover:scale-110">
+                        <img src="{{ asset('images/clients/nexus.png') }}" alt="Nexus" class="h-8 lg:h-10 w-auto filter grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="transition-all duration-300 hover:opacity-100 hover:scale-110">
+                        <img src="{{ asset('images/clients/vertex.png') }}" alt="Vertex 3D" class="h-8 lg:h-10 w-auto filter grayscale hover:grayscale-0 transition-all">
+                    </div>
+                    <div class="transition-all duration-300 hover:opacity-100 hover:scale-110">
+                        <img src="{{ asset('images/clients/aura.png') }}" alt="Aura" class="h-8 lg:h-10 w-auto filter grayscale hover:grayscale-0 transition-all">
+                    </div>
+                </div>
+            </section>
         </div>
 
         @if (Route::has('login'))

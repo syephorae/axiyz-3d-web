@@ -8,9 +8,9 @@
     "description": "Progressive Web App for aXiYZ 3D Studios E-commerce Platform",
     "icons": [
         {
-            "src": "/favicon.ico",
-            "sizes": "64x64",
-            "type": "image/x-icon"
+            "src": "/images/favicon.png",
+            "sizes": "192x192",
+            "type": "image/png"
         }
     ]
 }
