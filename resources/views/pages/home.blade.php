@@ -27,7 +27,7 @@
                 </main>
             </div>
         </div>
-        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-gray-900 border-l-4 border-brand-red flex items-center justify-center p-8">
+        <div class="relative lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 bg-gray-900 border-l-4 border-brand-red flex items-center justify-center p-4 lg:p-8 min-h-[300px] lg:min-h-0">
             <model-viewer src="/models/jeep.glb" auto-rotate camera-controls shadow-intensity="1" ar class="w-full h-[300px] lg:h-full bg-transparent"></model-viewer>
         </div>
     </div>
@@ -55,7 +55,7 @@
     
     <div class="py-16 bg-white relative z-0 overflow-hidden dot-grid interactive-grid">
         <!-- Background 3D Model (Classic Sonic Peeking) -->
-        <div class="absolute -left-20 inset-y-0 w-80 pointer-events-none z-0 hidden lg:block opacity-100">
+        <div class="absolute -left-16 lg:-left-20 inset-y-0 w-48 lg:w-80 pointer-events-none z-0 opacity-40 lg:opacity-100 transition-opacity">
             <model-viewer src="/models/classic_sonic.glb" auto-rotate rotation-per-second="30deg" class="w-full h-full bg-transparent border-none" camera-orbit="0deg 75deg 150%" loading="lazy" reveal="auto" shadow-intensity="1"></model-viewer>
         </div>
 
@@ -106,7 +106,7 @@
     <!-- Google Reviews Section -->
     <div class="py-16 bg-white relative z-0 overflow-hidden dot-grid interactive-grid border-t border-gray-200">
         <!-- Background 3D Model (Sneasler Peeking) -->
-        <div class="absolute -right-20 inset-y-0 w-80 pointer-events-none z-0 hidden lg:block opacity-100">
+        <div class="absolute -right-16 lg:-right-20 inset-y-0 w-48 lg:w-80 pointer-events-none z-0 opacity-40 lg:opacity-100 transition-opacity">
             <model-viewer src="/models/mobile_-_pokemon_home_-_903_sneasler.glb" auto-rotate rotation-per-second="-30deg" class="w-full h-full bg-transparent border-none" camera-orbit="0deg 75deg 150%" loading="lazy" reveal="auto" shadow-intensity="1"></model-viewer>
         </div>
 

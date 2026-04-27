@@ -45,7 +45,7 @@
                 
                 <div class="mt-12 lg:mt-0 relative h-[600px] overflow-visible">
                     <!-- Background Peeking Model (Consistency) -->
-                    <div class="absolute -right-20 top-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none z-0 hidden lg:block opacity-30">
+                    <div class="absolute -right-16 lg:-right-20 top-1/2 -translate-y-1/2 w-48 lg:w-80 h-48 lg:h-80 pointer-events-none z-0 opacity-20 lg:opacity-30 transition-opacity">
                         <model-viewer src="/models/car.glb" auto-rotate rotation-per-second="-30deg" class="w-full h-full bg-transparent border-none" loading="lazy" reveal="auto" shadow-intensity="1" camera-orbit="0deg 75deg 150%"></model-viewer>
                     </div>
 

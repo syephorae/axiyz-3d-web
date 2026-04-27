@@ -2,10 +2,10 @@
     <!-- Header -->
     <div class="bg-[#f99d22] pt-24 pb-16 relative overflow-hidden shadow-2xl">
         <!-- Background Peeking Models (Fully Visible Flanking) -->
-        <div class="absolute left-2 top-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none z-0 hidden lg:block opacity-100">
+        <div class="absolute left-2 top-1/2 -translate-y-1/2 w-48 lg:w-80 h-48 lg:h-80 pointer-events-none z-0 opacity-40 lg:opacity-100 transition-opacity">
             <model-viewer src="/models/snowdog_-_minecraft_-_free.glb" auto-rotate rotation-per-second="30deg" class="w-full h-full bg-transparent border-none" loading="lazy" reveal="auto" shadow-intensity="1" camera-orbit="0deg 75deg 85%"></model-viewer>
         </div>
-        <div class="absolute right-10 top-1/2 -translate-y-1/2 w-80 h-80 pointer-events-none z-0 hidden lg:block opacity-100">
+        <div class="absolute right-4 lg:right-10 top-1/2 -translate-y-1/2 w-48 lg:w-80 h-48 lg:h-80 pointer-events-none z-0 opacity-40 lg:opacity-100 transition-opacity">
             <model-viewer src="/models/boeing_737-300.glb" auto-rotate rotation-per-second="-20deg" class="w-full h-full bg-transparent border-none" loading="lazy" reveal="auto" shadow-intensity="1" camera-orbit="0deg 75deg 110%"></model-viewer>
         </div>
 

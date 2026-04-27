@@ -172,6 +172,7 @@
                 </div>
                 <div class="max-w-7xl mx-auto px-4 mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
                     <p>&copy; {{ date('Y') }} aXiYZ 3D Studios. All rights reserved.</p>
+                    <p class="mt-2 text-xs opacity-70">Website developed by <span class="text-brand-yellow font-semibold">AST Clouds Technology</span></p>
                 </div>
             </footer>
         </div>
