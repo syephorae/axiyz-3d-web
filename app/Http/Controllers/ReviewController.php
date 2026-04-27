@@ -16,41 +16,38 @@ class ReviewController extends Controller
      */
     public function fetchGoogleReviews()
     {
-        $filePath = database_path('data/reviews.json');
-        $lastUpdated = \Illuminate\Support\Facades\File::exists($filePath) 
-            ? \Illuminate\Support\Facades\File::lastModified($filePath) 
-            : null;
-
-        if (!\Illuminate\Support\Facades\File::exists($filePath)) {
-            return $this->fetchPlacesApiFallback();
-        }
-
         try {
-            $json = \Illuminate\Support\Facades\File::get($filePath);
-            $rawReviews = json_decode($json, true);
+            $latestReview = \App\Models\GoogleReview::latest()->first();
+            $lastUpdated = $latestReview ? $latestReview->updated_at : null;
 
-            // Surgical Mapping: Match EXACTLY what testimonials.blade.php JavaScript expects
-            $reviews = array_map(function ($item) {
-                return [
-                    'text' => $item['snippet'] ?? $item['text'] ?? '',
-                    'rating' => $item['rating'] ?? 5,
-                    'author_name' => $item['user']['name'] ?? $item['author_name'] ?? 'Anonymous',
-                    'profile_photo_url' => $item['user']['thumbnail'] ?? $item['author_image'] ?? null,
-                    'project_photos' => $item['images'] ?? [],
-                    'relative_time_description' => $item['date'] ?? 'Recent',
-                ];
-            }, $rawReviews);
+            $reviews = \App\Models\GoogleReview::orderBy('iso_date', 'desc')
+                ->take(18)
+                ->get()
+                ->map(function ($review) {
+                    return [
+                        'text' => $review->text,
+                        'rating' => $review->rating,
+                        'author_name' => $review->author_name,
+                        'profile_photo_url' => $review->profile_photo_url,
+                        'project_photos' => $review->project_photos,
+                        'relative_time_description' => $review->relative_time_description,
+                    ];
+                });
+
+            if ($reviews->isEmpty()) {
+                return $this->fetchPlacesApiFallback();
+            }
 
             return response()->json([
                 'reviews' => $reviews,
                 'rating' => 5.0,
-                'total_reviews' => count($reviews),
-                'last_updated' => $lastUpdated ? date('F j, Y, g:i A', $lastUpdated) : 'Never',
-                'source' => 'serpapi_local'
+                'total_reviews' => $reviews->count(),
+                'last_updated' => $lastUpdated ? $lastUpdated->format('F j, Y, g:i A') : 'Never',
+                'source' => 'database'
             ]);
 
         } catch (\Exception $e) {
-            \Illuminate\Support\Facades\Log::error("Surgical Snag reading reviews.json: " . $e->getMessage());
+            \Illuminate\Support\Facades\Log::error("Surgical Snag reading reviews from database: " . $e->getMessage());
             return $this->fetchPlacesApiFallback();
         }
     }

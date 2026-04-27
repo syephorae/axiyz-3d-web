@@ -80,16 +80,24 @@ class SyncReviews extends Command
         // Surgical Cap: Max 18 reviews
         $finalReviews = array_slice($allProcessedReviews, 0, $maxToStore);
 
-        $storagePath = database_path('data');
-        if (!File::exists($storagePath)) {
-            File::makeDirectory($storagePath, 0755, true);
+        // Save to Database
+        foreach ($finalReviews as $reviewData) {
+            \App\Models\GoogleReview::updateOrCreate(
+                ['review_id' => $reviewData['review_id'] ?? $reviewData['author_name'] . $reviewData['iso_date']], // Fallback unique key
+                [
+                    'author_name' => $reviewData['user']['name'] ?? $reviewData['author_name'] ?? 'Anonymous',
+                    'rating' => $reviewData['rating'] ?? 5,
+                    'text' => $reviewData['snippet'] ?? $reviewData['text'] ?? '',
+                    'profile_photo_url' => $reviewData['user']['thumbnail'] ?? $reviewData['author_image'] ?? null,
+                    'project_photos' => $reviewData['images'] ?? [],
+                    'relative_time_description' => $reviewData['date'] ?? 'Recent',
+                    'iso_date' => isset($reviewData['iso_date']) ? date('Y-m-d H:i:s', strtotime($reviewData['iso_date'])) : null,
+                ]
+            );
         }
 
-        $filePath = $storagePath . '/reviews.json';
-        File::put($filePath, json_encode($finalReviews, JSON_PRETTY_PRINT));
-
         $count = count($finalReviews);
-        $this->info("✅ Success! Surgical-ly synced {$count} fresh reviews (capped at 18) to the local repository.");
+        $this->info("✅ Success! Surgical-ly synced {$count} fresh reviews (capped at 18) to the database.");
         return 0;
     }
 
